@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pad_id: 1
+  note_title: MyString
+  content: MyText
+  keywords: MyString
+
+two:
+  pad_id: 1
+  note_title: MyString
+  content: MyText
+  keywords: MyString

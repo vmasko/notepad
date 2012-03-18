@@ -1,0 +1,7 @@
+<h1>Pads#new</h1>
+<h3>Here you can create a new notepad</h3>
+<%= form_for @pad do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	
+	<%= f.submit "Create a pad" %>

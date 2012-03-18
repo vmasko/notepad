@@ -1,0 +1,7 @@
+<h1>Pads#index</h1>
+<%= link_to "Create new notepad", new_pad_path %>
+<p>
+	<% @pads.each do |pad| %>
+		<%= link_to "#{pad.title}", pad %>
+	<% end %>
+</p>
