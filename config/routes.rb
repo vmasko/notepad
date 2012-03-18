@@ -1,4 +1,46 @@
 Notepad::Application.routes.draw do
+  get "notes/index"
+
+  get "notes/show"
+
+  get "notes/new"
+
+  get "notes/create"
+
+  get "notes/destroy"
+
+  get "pads/index"
+
+  get "pads/show"
+
+  get "pads/new"
+
+  get "pads/create"
+
+  get "pads/destroy"
+
+  get "notepads/index"
+
+  get "notepads/show"
+
+  get "notepads/new"
+
+  get "notepads/create"
+
+  get "notepads/destroy"
+
+  get "users/new"
+
+  get "users/create"
+
+  get "users/destroy"
+
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
