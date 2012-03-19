@@ -1,0 +1,10 @@
+<h1>Pads#show</h1>
+<p><%= @pad.title %></p>
+<p>
+	<% @notes.each do |note| %>
+		<%= note.title %>
+		<%= note.content %>
+		<%= note.keywords %>
+		<%= link_to "Delete note", pad_note_path(@pad), :method => :delete %>
+	<% end %>
+<%= link_to "Create a new note", new_pad_note_path(@pad) %>

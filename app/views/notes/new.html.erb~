@@ -1,0 +1,14 @@
+<%= form_for @note do |f| %>
+	<%= f.label :note_title %><br/>
+	<%= f.text_field :note_title %><br/>
+
+	<%= f.label :content %><br/>
+	<%= f.text_field :content %><br/>
+
+	<%= f.label :keywords %><br/>
+	<%= f.text_field :keywords %><br/>
+	
+	<%= f.submit "Create note" %>
+<% end %>
+	
+
