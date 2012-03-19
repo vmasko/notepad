@@ -1,9 +1,18 @@
 class PadsController < ApplicationController
   def index
-		@pads = current_user.pads
-  end
+		if current_user
+			@pads = current_user.pads
+		end  
+	end
 
   def show
+		@pad = Pad.find(params[:id])
+		if current_user == @pad.user
+			session[:pad] = @pad
+			@notes = @pad.notes
+		else
+			redirect_to root_path
+		end
   end
 
   def new

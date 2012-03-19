@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20120318101500) do
 
   create_table "notes", :force => true do |t|
     t.integer  "pad_id"
-    t.string   "note_title"
+    t.string   "title"
     t.text     "content"
     t.string   "keywords"
     t.datetime "created_at", :null => false
@@ -31,8 +31,6 @@ ActiveRecord::Schema.define(:version => 20120318101500) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.string   "surname"
-    t.string   "nickname"
     t.string   "email"
     t.string   "password_digest"
     t.string   "remember_token"

@@ -1,7 +1,14 @@
+<% if !current_user %>
+	<section id="sign_up_greeting">
+		<center><h1>Hello! This is my sample notepad.<br/>Just sign up, if you wany simple and reliable tool.<br/><%= link_to "Sign up", signup_path %> or <%= link_to "Sign in", signin_path %>!</h1></center></section>
+<% else %>
 <h1>Pads#index</h1>
 <%= link_to "Create new notepad", new_pad_path %>
 <p>
-	<% @pads.each do |pad| %>
-		<%= link_to "#{pad.title}", pad %>
+	<% if current_user %>
+		<% @pads.each do |pad| %>
+			<%= link_to "#{pad.title}", pad %>
+		<% end %>
 	<% end %>
 </p>
+<% end %>
