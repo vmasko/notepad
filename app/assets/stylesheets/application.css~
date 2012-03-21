@@ -1,0 +1,60 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+@font-face {
+    font-family: 'CabinSketchRegular';
+    src: url('font/cabinsketch-regular-webfont.eot');
+    src: url('font/cabinsketch-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/cabinsketch-regular-webfont.woff') format('woff'),
+         url('font/cabinsketch-regular-webfont.ttf') format('truetype'),
+         url('font/cabinsketch-regular-webfont.svg#CabinSketchRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+	color: white;
+	margin: 0px;
+	padding: 0px;
+	background-image: url(background.jpg)
+}
+
+header {
+	width: 954px;
+	height: 66px;
+	margin: 20px auto auto auto;
+	padding: 10px 10px 10px 10px;
+	background-color: #ff0000;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	opacity: 0.5;
+}
+
+.title {
+	font-family: CabinSketchRegular;
+	font-size: 60pt;
+}
+
+#main {
+	width: 954px;
+	margin: auto;
+	padding: 10px 10px 10px 10px;
+	background-color: white;
+	opacity: 0.5;
+
+	h1 {
+		color: #ff0000;
+	}
+}

@@ -7,16 +7,16 @@ class NotesController < ApplicationController
   end
 
   def new
-		@note = Note.new
+		@note = Pad.find(params[:pad_id]).notes.new
   end
 
   def create
-		@note = Pad.find(session[:pad].id).notes.create(params[:note])
-		redirect_to session[:pad]
+		@note = Pad.find(params[:pad_id]).notes.build(params[:note])
+		redirect_to Pad.find(params[:pad_id])
   end
 
   def destroy
 		Note.find(params[:id]).destroy
-		redirect_to Pad.find(params[:id])
+		redirect_to Pad.find(params[:pad_id])
   end
 end

@@ -7,7 +7,8 @@ Notepad::Application.routes.draw do
 	end
 
 	resources :sessions
-	match 'pad_notes', :to => 'notes#create', :as => :notes
+	
+	match 'pad_notes/:pad_id/notes(.:format)', :to => 'notes#create', :as => :notes
 	match "/signup" => "users#new"
 	match "/signin" => "sessions#new"
 	match "/signout" => "sessions#destroy"

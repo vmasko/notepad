@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
-	has_many :pads
+	has_many :pads, :dependent => :destroy
 	attr_accessible :name, :email, :password, :password_confirmation
 
 	validates :name, :presence => true, :length => { :maximum => 30 }

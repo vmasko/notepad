@@ -1,13 +1,31 @@
 <% if !current_user %>
 	<section id="sign_up_greeting">
-		<center><h1>Hello! This is my sample notepad.<br/>Just sign up, if you wany simple and reliable tool.<br/><%= link_to "Sign up", signup_path %> or <%= link_to "Sign in", signin_path %>!</h1></center></section>
+		<center>
+			<h1>
+				Hello! This is my sample notepad.<br/>
+				Just sign up, if you wany simple and reliable tool.<br/>
+				<%= link_to "Sign up", signup_path %> or <%= link_to "Sign in", signin_path %>!
+			</h1>
+		</center>
+	</section>
 <% else %>
-<h1>Pads#index</h1>
-<%= link_to "Create new notepad", new_pad_path %>
-<p>
-	<% if current_user %>
-		<% @pads.each do |pad| %>
-			<%= link_to "#{pad.title}", pad %>
-		<% end %>
+	<h1>
+		Your notepads
+	</h1>
+	<% if @pads == [] %>
+		<p>
+			There isn't any notepads! Create one right now.
+		</p>
+		<%= link_to "Create new notepad", new_pad_path, :class => "create_button" %>
+	<% else %>
+		<%= link_to "Create new notepad", new_pad_path, :class => "create_button" %>
+		<p>
+			<% if current_user %>
+				<% @pads.each do |pad| %>
+					• <%= link_to "#{pad.title}", pad, :class => "pad_link" %>
+						<%= " | #{pad.description}" if pad.description == nil %></br>
+				<% end %>
+			<% end %>
+		</p>
 	<% end %>
-</p>
+<% end %>

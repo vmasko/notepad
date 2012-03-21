@@ -1,2 +1,8 @@
 class Pad < ActiveRecord::Base
+
+	belongs_to :user
+	has_many :notes, :dependent => :destroy
+
+	validates :content, :presence => true
+
 end

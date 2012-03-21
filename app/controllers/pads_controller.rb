@@ -7,12 +7,7 @@ class PadsController < ApplicationController
 
   def show
 		@pad = Pad.find(params[:id])
-		if current_user == @pad.user
-			session[:pad] = @pad
-			@notes = @pad.notes
-		else
-			redirect_to root_path
-		end
+		@notes = @pad.notes
   end
 
   def new
@@ -25,5 +20,7 @@ class PadsController < ApplicationController
   end
 
   def destroy
+		Pad.find(params[:id]).destroy
+		redirect_to root_url
   end
 end
