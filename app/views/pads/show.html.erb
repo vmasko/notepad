@@ -8,9 +8,13 @@
 <%= link_to "Create a new note", new_pad_note_path(@pad), :class => "create_button" %>
 <p>
 	<% @notes.each do |note| %>
-		<%= note.title %>
-		<%= note.content %>
-		<%= note.keywords %>
-		<%= link_to "Delete note", pad_note_path(@pad, note), :method => :delete %>
+		<h2>
+			<%= note.title %>
+			<span class="action_link">
+			<%= link_to "Edit", pad_note_path(@pad, note) %> |
+			<%= link_to "Delete", pad_note_path(@pad, note), :method => :delete %>
+		</h2>
+		<p><%= note.content %></p>
+		<p><b>Keywords:</b> <%= note.keywords %></p><br/>
 	<% end %>
 </p>

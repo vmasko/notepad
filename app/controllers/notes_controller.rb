@@ -4,6 +4,8 @@ class NotesController < ApplicationController
   end
 
   def show
+		@pad = Pad.find(params[:pad_id])
+		@note = Note.find(params[:id])
   end
 
   def new
@@ -14,6 +16,12 @@ class NotesController < ApplicationController
 		@note = Pad.find(params[:pad_id]).notes.create(params[:note])
 		redirect_to Pad.find(params[:pad_id])
   end
+
+	def update
+		Note.find(params[:id]).update_attributes(params[:note])
+		flash[:notice] = "Updated!"
+		redirect_to Pad.find(params[:pad_id])
+	end
 
   def destroy
 		Note.find(params[:id]).destroy

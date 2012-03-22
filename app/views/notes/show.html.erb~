@@ -1,2 +1,1 @@
 <h1>Notes#show</h1>
-<%= @note.content %>

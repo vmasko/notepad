@@ -8,7 +8,7 @@
 	<%= f.label :keywords %><br/>
 	<%= f.text_field :keywords %><br/>
 	
-	<%= f.submit "Create note" %>
+	<%= f.submit "Create note", :class => "submit"%>
 <% end %>
 	
 
