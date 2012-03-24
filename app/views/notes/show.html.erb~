@@ -1,1 +1,20 @@
-<h1>Notes#show</h1>
+<%= form_for [@pad, @note] do |f| %>
+	<% if @note.errors.any? %>
+		<h2>Form is invalid</h2>
+		<ul>
+			<% @note.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	<%= f.label :title %><br/>
+	<%= f.text_field :title %><br/>
+
+	<%= f.label :content %>
+	<%= f.text_area :content, :rows => 6, :cols => 45 %><br/>
+
+	<%= f.label :keywords %><br/>
+	<%= f.text_field :keywords %><br/>
+	
+	<%= f.submit "Update", :class => "submit"%>
+<% end %>

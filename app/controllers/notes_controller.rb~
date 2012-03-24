@@ -1,30 +1,52 @@
 class NotesController < ApplicationController
+
+	before_filter :signed_in_user
+	before_filter :correct_user, :only => [:show, :edit, :destroy]
+
   def index
 		@pad_id = params[:pad_id]
   end
 
   def show
-		@pad = Pad.find(params[:pad_id])
-		@note = Note.find(params[:id])
-  end
+		begin
+			@pad = Pad.find(params[:pad_id])
+			@note = Note.find(params[:id])
+  	rescue ActiveRecord::RecordNotFound
+			flash[:alert] = "Couldn't find Note with id=#{params[:id]}."
+			redirect_to @pad
+		end
+	end
 
   def new
 		@note = Pad.find(params[:pad_id]).notes.new
   end
 
   def create
-		@note = Pad.find(params[:pad_id]).notes.create(params[:note])
-		redirect_to Pad.find(params[:pad_id])
+		@pad = Pad.find(params[:pad_id])
+		@note = @pad.notes.build(params[:note])
+		@note.title = "#{@note.content[0..25]}..." if @note.title == ""
+		if @note.save
+			redirect_to @pad
+		else
+			render 'new'
+		end
   end
 
 	def update
-		Note.find(params[:id]).update_attributes(params[:note])
-		flash.[:notice] = "Updated!"
-		redirect_to Pad.find(params[:pad_id])
+		@pad = Pad.find(params[:pad_id])
+		@note = Note.find(params[:id])
+
+		if @note.update_attributes(params[:note])
+			flash[:notice] = "Updated!"
+			redirect_to @pad
+		else
+			render 'show'
+		end
 	end
 
   def destroy
 		Note.find(params[:id]).destroy
 		redirect_to Pad.find(params[:pad_id])
   end
+
 end

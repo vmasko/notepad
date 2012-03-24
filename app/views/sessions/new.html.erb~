@@ -1,10 +1,24 @@
-<h1>Please, sign in with your email and password</h1>
+<h1>
+	Please, sign in with your email and password.
+</h1>
 </br>
+
+
 <%= form_tag sessions_path do %>
+	<% if @user.errors.any? %>
+		<h2>Form is invalid</h2>
+		<ul>
+			<% @user.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
 	<%= label_tag :email %></br>
 	<%= text_field_tag :email, params[:email] %></br>
 	
 	<%= label_tag :password %></br>
 	<%= password_field_tag :password %></br>
+
 	<%= submit_tag "Sign in", :class => "submit" %>
 <% end %>

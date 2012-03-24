@@ -1,0 +1,9 @@
+<section>
+	<h1>
+		Welcome to the Notepad!
+	</h1>
+	<p>
+		Notepad is a simple web-application, which could fast and secure store any your text information.
+	</p>
+	<section class="fuck"><%= link_to "Sign up!", signup_path, :class => "signup_button" %></section>
+</section>

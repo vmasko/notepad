@@ -1,4 +1,12 @@
 <%= form_for [@pad, @note] do |f| %>
+	<% if @note.errors.any? %>
+		<h2>Form is invalid</h2>
+		<ul>
+			<% @note.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
 	<%= f.label :title %><br/>
 	<%= f.text_field :title %><br/>
 

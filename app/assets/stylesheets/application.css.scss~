@@ -12,17 +12,51 @@
  *= require_tree .
 */
 
+.signup_button {
+	width: 250px;
+	height: 20px;
+	background-color: #4F0000;
+	border: #2E0000 7px solid;
+	display: inline-block;
+	margin-left: 334px;
+	text-align: center;
+	padding: 15px 10px 40px 10px;
+	font-size: 30px;
+	text-decoration: none;
+	border-radius: 20px;
+
+		&:hover {
+			padding: 15px 10px 40px 10px;
+			background-color: #2E0000;
+			border: #2E0000 7px solid;
+			border-radius: 20px;
+			color: white;
+		}
+}
+
+label {
+	font-style: italic;
+}
+
+.field_with_errors textarea, .field_with_errors input {
+	background-color: #FFA3A3;
+}
+
+.field_with_errors label {
+	font-size: 25px;
+	font-style: normal;
+}
+
 a {
 	color: #FFF;
 		
-
+		&:hover {
 			padding: 2px 2px 2px 2px;
-			
 			border-radius: 2px;
 			background-color: #FFF;
 			color: #525252;
 			text-decoration: none;
-
+		}
 }
 
 body {
@@ -44,6 +78,13 @@ header {
 
 	.status {
 		margin-left: 350px;
+		text-align: right;
+
+			
+		& #nsigned {
+			margin-left: 160px;
+			text-align: right;
+		}
 	}
 
 		.title {
@@ -69,14 +110,17 @@ footer {
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
+
 h1 {
 	font-size: 30px;
 	font-weight: normal;
 	margin: 0 0 0 0;
 }
 
-.status {
-	text-align: right;
+h2 {
+	font-size: 25px;
+	font-weight: normal;
+	margin: 0 0 0 0;
 }
 
 input	 {

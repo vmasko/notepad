@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-	def signed_in
-		redirect_to root_path if !current_user
-	end	
+	def signed_in?
+		!current_user.nil?
+	end
+
+	def signed_in_user
+		redirect_to root_url unless signed_in?
+	end
 
 	private
 		

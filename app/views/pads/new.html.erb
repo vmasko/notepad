@@ -1,6 +1,16 @@
 <h1>Create your new notepad</h1>
 <p>Please, enter the title of your new pad.</p>
 <%= form_for @pad do |f| %>
+	
+	<% if @pad.errors.any? %>
+		<h2>Form is invalid</h2>
+		<ul>
+			<% @pad.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
 	<%= f.label :title %></br>
 	<%= f.text_field :title %></br>
 

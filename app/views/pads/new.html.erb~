@@ -1,11 +1,11 @@
 <h1>Create your new notepad</h1>
 <p>Please, enter the title of your new pad.</p>
 <%= form_for @pad do |f| %>
-	<%= f.label :title %>
+	<%= f.label :title %></br>
 	<%= f.text_field :title %></br>
 
-	<%= f.label :description %>
-	<%= f.text_field :description %>
+	<%= f.label :description %></br>
+	<%= f.text_field :description %></br>
 	
 	<%= f.submit "Create a pad", :class => "submit" %>
 <% end %>
