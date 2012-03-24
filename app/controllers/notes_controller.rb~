@@ -49,4 +49,11 @@ class NotesController < ApplicationController
 		redirect_to Pad.find(params[:pad_id])
   end
 
+
+	private
+		
+		def correct_user
+			@note = current_user.notes.find_by_id(params[:id])
+			redirect_to root_url if @note.nil?
+		end	
 end

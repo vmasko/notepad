@@ -1,7 +1,7 @@
 class PadsController < ApplicationController
 
-	before_filter :signed_in_user
-	before_filter :correct_user, :only => [:show]
+	before_filter :signed_in_user, :only => [:show, :new, :create, :destroy]
+	before_filter :correct_user, :only => [:show, :destroy]
 
   def index
 		if current_user
@@ -12,7 +12,7 @@ class PadsController < ApplicationController
   def show
 		begin
 			@pad = Pad.find(params[:id])
-			@notes = @pad.notes
+			@notes = @pad.notes.paginate(:page => params[:page])
 		rescue ActiveRecord::RecordNotFound
 			flash[:alert] = "Couldn't find Pad with id=#{params[:id]}."
 			redirect_to root_url

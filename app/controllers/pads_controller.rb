@@ -12,7 +12,7 @@ class PadsController < ApplicationController
   def show
 		begin
 			@pad = Pad.find(params[:id])
-			@notes = @pad.notes
+			@notes = @pad.notes.paginate(:page => params[:page], :per_page => 5)
 		rescue ActiveRecord::RecordNotFound
 			flash[:alert] = "Couldn't find Pad with id=#{params[:id]}."
 			redirect_to root_url

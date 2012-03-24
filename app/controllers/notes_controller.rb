@@ -25,6 +25,7 @@ class NotesController < ApplicationController
 		@pad = Pad.find(params[:pad_id])
 		@note = @pad.notes.build(params[:note])
 		@note.title = "#{@note.content[0..25]}..." if @note.title == ""
+		@note.keywords = "none" if @note.keywords == ""
 		if @note.save
 			redirect_to @pad
 		else

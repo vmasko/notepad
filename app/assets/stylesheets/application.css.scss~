@@ -11,7 +11,10 @@
  *= require_self
  *= require_tree .
 */
-
+.pagination {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
 .signup_button {
 	width: 250px;
 	height: 20px;

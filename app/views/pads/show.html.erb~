@@ -7,14 +7,16 @@
 </h1>
 <%= link_to "Create a new note", new_pad_note_path(@pad), :class => "create_button" %>
 <p>
+	<%= will_paginate @notes %>
 	<% @notes.each do |note| %>
 		<h2>
 			<%= note.title %>
 			<span class="action_link">
-			<%= link_to "Edit", edit_note_path(@pad, note) %> |
+			<%= link_to "Edit", pad_note_path(@pad, note) %> |
 			<%= link_to "Delete", pad_note_path(@pad, note), :method => :delete %>
 		</h2>
 		<p><%= note.content %></p>
 		<p><b>Keywords:</b> <%= note.keywords %></p><br/>
 	<% end %>
+		<%= will_paginate @notes %>	
 </p>
