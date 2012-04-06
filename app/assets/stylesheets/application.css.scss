@@ -64,7 +64,7 @@ body {
 	padding: 0px;
 	background-image: url(background.jpg);
 	color: white;
-	font-family: Droid Sans Fallback;
+	font-family: Arial;
 }
 
 header {
@@ -129,7 +129,7 @@ input	 {
 	padding: 10px 10px 10px 10px;
 	margin-bottom: 10px;
 	font-size: 25px;
-	font-family: Droid Sans;
+	font-family: Arial;
 	border: none;
 	border-radius: 10px;
 }
@@ -140,7 +140,7 @@ input	 {
 	padding: 10px 10px 10px 10px;
 	margin-bottom: 10px;
 	font-size: 15px;
-	font-family: Droid Sans;
+	font-family: Arial;
 	border: none;
 	border-radius: 10px;
 }
@@ -157,7 +157,7 @@ input	 {
 	border-radius: 10px;
 
 	&:hover {
-		background-color: black;
+		background-color: 9E9E9E;
 	}
 }
 
