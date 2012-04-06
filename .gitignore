@@ -16,5 +16,5 @@
 
 #Ignore vim swap and temporary files.
 *.swp
-*.*~
+*~
 
