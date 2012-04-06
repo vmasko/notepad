@@ -145,7 +145,7 @@ input	 {
 	border-radius: 10px;
 }
 
-.submit {
+input.submit {
 	width: 100px;
 	height: 40px;
 	padding: 10px 10px 10px 10px;
@@ -157,7 +157,7 @@ input	 {
 	border-radius: 10px;
 
 	&:hover {
-		background-color: 9E9E9E;
+		background-color: #9E9E9E;
 	}
 }
 
