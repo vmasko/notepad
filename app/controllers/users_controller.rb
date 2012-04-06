@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 		if @user.save
 			session[:user_id] = @user.id
 			flash[:notice] = "User was successfully created!"
-			UserMailer.welcome_mail(@user).deliver
 			redirect_to root_path
 		else
 			render "new"
