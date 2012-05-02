@@ -1,2 +1,2 @@
 == Welcome to Notepad!
-Notepad — simple and secure application to store your notes in multiple pads.
+Notepad — simple and secure application, which lets you store your notes in multiple pads.
